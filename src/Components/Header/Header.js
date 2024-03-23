@@ -1,12 +1,33 @@
-import React from "react";
+import React, { Fragment } from "react";
 import './Header.css'
 
-const Header = () => {
+const Header = ({ searchMovie, query, setQuery, movies }) => {
     return (
-        <div className="Header">
-            <h1>Header Components</h1>
-        </div>
-    )
+        <Fragment>
+            <div className="header">
+                <h1 className="title">Movie-Search</h1>
+
+                {/* The Search Form */}
+
+                <div className="search">
+                    <form className="search-form" onSubmit={searchMovie}>
+                        <label>
+                            htmlFor="query"
+                            className="name"
+                        </label>
+                        <input
+                            type="text"
+                            name="query"
+                            placeholder="i.e Oppenhiemmer"
+                            value={query}
+                            onChange={(e) => setQuery(e.target.value)}
+                        />
+                        <button type="submit">Search</button>
+                    </form>
+                </div>
+            </div>
+        </Fragment>
+        )
 }
 
 export default Header;

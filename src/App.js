@@ -5,6 +5,7 @@ import Movies from './Components/Movies/Movies';
 function App() {
   return (
     <div className="App">
+      {/* adding the movie component */}
       <Movies />
     </div>
   );
